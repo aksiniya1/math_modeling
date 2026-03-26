@@ -5,7 +5,7 @@ from matplotlib.patches import Circle, Polygon, RegularPolygon
 import matplotlib.transforms as transforms
 
 # ============================================
-# НАСТРАИВАЕМЫЕ ПАРАМЕТРЫ (меняй их как хочешь!)
+# НАСТРОЙКА ПАРАМЕТРОВ
 # ============================================
 ANGLE = 10 # Угол наклона рогатки в градусах
 RUBBER_BAND_STRENGTH = 50  # Сила выстрела (начальная скорость)
@@ -236,21 +236,7 @@ def update(frame):
 
 # ============================================
 # ЗАПУСК АНИМАЦИИ
-# ============================================
 ani = FuncAnimation(fig, update, frames=500, interval=50, repeat=False)
 
-
 ani.save('animation_1.gif', writer="pillow")
-# Сохраняем анимацию (можно закомментировать если не нужно)
-# ani.save('slingshot_lamp.gif', writer='pillow', fps=20)
 
-plt.tight_layout()
-plt.show()
-
-print("🎮 Анимация запущена!")
-print("📝 Чтобы изменить параметры, отредактируй константы в начале файла:")
-print(f"   ANGLE = {ANGLE}")
-print(f"   RUBBER_BAND_STRENGTH = {RUBBER_BAND_STRENGTH}")
-print(f"   STONE_MASS = {STONE_MASS}")
-print(f"   GLASS_THICKNESS = {GLASS_THICKNESS}")
-print(f"   LAMP_RADIUS = {LAMP_RADIUS}")
