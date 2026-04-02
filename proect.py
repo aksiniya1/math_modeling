@@ -4,14 +4,19 @@ from matplotlib.animation import FuncAnimation
 from matplotlib.patches import Circle, Polygon, RegularPolygon
 import matplotlib.transforms as transforms
 
+import pyfiglet
+result = pyfiglet.figlet_format("ROGATKA", font="slant")
+print(result)
+
+
 # ============================================
 # НАСТРОЙКА ПАРАМЕТРОВ
 # ============================================
-ANGLE = 10 # Угол наклона рогатки в градусах
-RUBBER_BAND_STRENGTH = 50  # Сила выстрела (начальная скорость)
-STONE_MASS = 1.0  # Масса камня
-GLASS_THICKNESS = 0.8  # Толщина стекла (прочность лампы)
-LAMP_RADIUS = 2.0  # Радиус лампы
+ANGLE = input('Угол наклона рогатки в градусах: ') 
+RUBBER_BAND_STRENGTH = input('Сила выстрела: ') 
+STONE_MASS =  input('Масса камня: ') 
+GLASS_THICKNESS = input('Толщина стекла: ') 
+LAMP_RADIUS =input('Радиус лампы: ') 
 
 # Физические константы
 GRAVITY = 5.0  # Гравитация (уменьшил для красивой анимации)
@@ -239,4 +244,3 @@ def update(frame):
 ani = FuncAnimation(fig, update, frames=500, interval=50, repeat=False)
 
 ani.save('animation_1.gif', writer="pillow")
-
